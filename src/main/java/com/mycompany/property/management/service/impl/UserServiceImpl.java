@@ -36,6 +36,8 @@ public class UserServiceImpl implements UserService {
            errorModelList.add(errorModel);
            throw new BuisnessException(errorModelList);
        }
+
+
         UserEntity userEntity=userConverter.getDTOtoEntity(userDTO);
         userRepository.save(userEntity);
        userDTO = userConverter.getEntitytoDTO(userEntity);

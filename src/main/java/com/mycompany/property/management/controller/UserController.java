@@ -26,7 +26,7 @@ public class UserController {
         return responseEntity;
     }
 
-    @PostMapping("/login")
+    @PostMapping(path="/login",produces = {"application/json"},consumes = {"application/json"})
     public ResponseEntity<UserDTO> login(@RequestBody UserDTO userDto){
         userDto= userService.login(userDto.getOwnerEmail(),userDto.getPassword());
         return new ResponseEntity<>(userDto, HttpStatus.OK);
